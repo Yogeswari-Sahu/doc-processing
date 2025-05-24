@@ -92,12 +92,14 @@ export default function EditMatchModal({
                 </label>
 
                 <Combobox
-                  value={selected}
-                  onChange={(c) => {
-                    setSelected(c);
-                    onSelect(c.sku, c.name);
-                  }}
-                >
+                    value={selected}
+                    onChange={(c: CatItem | null) => {
+                        if (!c) return;          // ← safely ignore the null case
+                        setSelected(c);
+                        onSelect(c.sku, c.name); // no more TS18047
+                    }}
+>
+
                   <div className="relative">
                     <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
                     <Combobox.Input
