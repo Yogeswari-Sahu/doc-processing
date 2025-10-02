@@ -1,5 +1,4 @@
-# Endeavor Take-Home (React + FastAPI + MySQL)
-A full-stack purchase order document processing tool.
+# A full-stack purchase order document processing tool. (React + FastAPI + MySQL)
 
 ## Tech Stack
 
